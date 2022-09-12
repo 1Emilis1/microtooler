@@ -161,6 +161,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (selectedData == 1) {
+        input.calibrateCompass()
         degrees = input.compassHeading()
         if (degrees < 45) {
             basic.showArrow(ArrowNames.North)
@@ -173,22 +174,22 @@ basic.forever(function () {
         } else {
             basic.showString("X")
         }
-    }
-    if (selectedData == 2) {
-        led.setBrightness(255)
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            `)
-        basic.pause(100)
-        basic.clearScreen()
-        radio.sendNumber(9)
-    }
-    if (selectedData == 3) {
-        basic.showString("ver: 1.0 Beta")
+        if (selectedData == 2) {
+            led.setBrightness(255)
+            basic.showLeds(`
+                # # # # #
+                # # # # #
+                # # # # #
+                # # # # #
+                # # # # #
+                `)
+            basic.pause(200)
+            basic.clearScreen()
+            radio.sendNumber(9)
+        }
+        if (selectedData == 3) {
+            basic.showString("ver: 1.0 Beta")
+        }
     }
 })
 basic.forever(function () {
