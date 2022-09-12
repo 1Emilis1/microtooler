@@ -23,7 +23,6 @@ bluetooth.startButtonService()
 bluetooth.startIOPinService()
 bluetooth.startLEDService()
 bluetooth.startTemperatureService()
-bluetooth.startMagnetometerService()
 led.setBrightness(105)
 basic.showLeds(`
     # . . . #
