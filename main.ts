@@ -100,6 +100,7 @@ basic.forever(function () {
         }
         for (let index = 0; index < 10; index++) {
             if (input.buttonIsPressed(Button.AB)) {
+                input.calibrateCompass()
                 selectedData = 1
                 selected = 0
             }
@@ -141,7 +142,6 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (selectedData == 1) {
-        input.calibrateCompass()
         degrees = input.compassHeading()
         if (degrees < 45) {
             basic.showArrow(ArrowNames.North)
