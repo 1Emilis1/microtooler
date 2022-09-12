@@ -3,24 +3,6 @@
  * 
  * (do not steal, give me credits if u do)
  */
-radio.onReceivedNumber(function (receivedNumber) {
-    nearEmergency = receivedNumber
-    if (nearEmergency == 9) {
-        selected = 0
-        basic.showLeds(`
-            . . # . .
-            # # # # #
-            . . # . .
-            . # # # .
-            # # # # #
-            `)
-        num += 1
-        for (let index = 0; index < num; index++) {
-            basic.showString("Near emergency detected.")
-            num += 1
-        }
-    }
-})
 /**
  * Made by 1Emilis!
  * 
@@ -33,9 +15,7 @@ radio.onReceivedNumber(function (receivedNumber) {
  */
 let degrees = 0
 let selectedData = 0
-let num = 0
 let selected = 0
-let nearEmergency = 0
 let isSafemode = 0
 let isNormal = 0
 led.setBrightness(105)
@@ -174,22 +154,21 @@ basic.forever(function () {
         } else {
             basic.showString("X")
         }
-        if (selectedData == 2) {
-            led.setBrightness(255)
-            basic.showLeds(`
-                # # # # #
-                # # # # #
-                # # # # #
-                # # # # #
-                # # # # #
-                `)
-            basic.pause(200)
-            basic.clearScreen()
-            radio.sendNumber(9)
-        }
-        if (selectedData == 3) {
-            basic.showString("ver: 1.0 Beta")
-        }
+    }
+    if (selectedData == 2) {
+        led.setBrightness(255)
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+        basic.pause(200)
+        basic.clearScreen()
+    }
+    if (selectedData == 3) {
+        basic.showString("ver: 1.1 Beta")
     }
 })
 basic.forever(function () {
