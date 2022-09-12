@@ -18,11 +18,6 @@ let selectedData = 0
 let selected = 0
 let isSafemode = 0
 let isNormal = 0
-bluetooth.startAccelerometerService()
-bluetooth.startButtonService()
-bluetooth.startIOPinService()
-bluetooth.startLEDService()
-bluetooth.startTemperatureService()
 led.setBrightness(105)
 basic.showLeds(`
     # . . . #
