@@ -3,6 +3,14 @@
  * 
  * (do not steal, give me credits if u do)
  */
+bluetooth.onBluetoothConnected(function () {
+    bluetooth.startAccelerometerService()
+    bluetooth.startButtonService()
+    bluetooth.startIOPinService()
+    bluetooth.startLEDService()
+    bluetooth.startTemperatureService()
+    bluetooth.startMagnetometerService()
+})
 /**
  * Made by 1Emilis!
  * 
@@ -166,6 +174,7 @@ basic.forever(function () {
             `)
         basic.pause(200)
         basic.clearScreen()
+        basic.pause(100)
     }
     if (selectedData == 3) {
         basic.showString("ver: 1.1 Beta")
