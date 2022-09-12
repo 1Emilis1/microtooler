@@ -47,7 +47,6 @@ basic.showLeds(`
     # . . . #
     `)
 basic.pause(1000)
-input.calibrateCompass()
 for (let index = 0; index < 10; index++) {
     if (input.buttonIsPressed(Button.AB)) {
         led.setBrightness(70)
