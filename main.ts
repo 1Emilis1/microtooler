@@ -142,6 +142,7 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (selectedData == 1) {
+        input.calibrateCompass()
         degrees = input.compassHeading()
         if (degrees < 45) {
             basic.showArrow(ArrowNames.North)
